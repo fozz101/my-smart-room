@@ -56,7 +56,7 @@ void handleRoot() {
     html += "<div class='status'>";
     html += "<h3>Status:</h3>";
     html += "<p>";
-    html += "Blinds are scheduled to MOVE UP at " + String(upHour) + ":" + String(upMinute) + " !";
+    html += "Blinds are scheduled to MOVE UP at " + (String(upHour).length() == 1 ? "0"+String(upHour) : String(upHour)) + ":" + (String(upMinute).length() == 1 ? "0"+String(upMinute) : String(upMinute)) + " !";
     html += "<form action='/stopUpSchedule' method='GET'>";
     html += "<input type='submit' value='Stop Schedule'>";
     html += "</form>";
@@ -155,7 +155,7 @@ void handleUpSchedule() {
   String html = "<!DOCTYPE html><html><head><title>UP Schedule ACTIVATED</title><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><body>";
   html += "<div class='container'>";
   html += "<h2>UP Schedule ACTIVATED</h2>";
-  html += "<p>Schedule set: Up Hour - " + String(upHour) + ", Up Minute - " + String(upMinute) + "</p>";
+  html += "<p>Schedule set: Up Hour - " + (String(upHour).length() == 1 ? "0"+String(upHour) : String(upHour))  + ", Up Minute - " + (String(upMinute).length() == 1 ? "0"+String(upMinute) : String(upMinute)) + "</p>";
   html += "<a href='/'>Back</a>";
   html += "</div>";
   html += "<style>";
